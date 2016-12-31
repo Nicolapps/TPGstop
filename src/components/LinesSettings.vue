@@ -4,7 +4,7 @@
       <h2>Lignes</h2>
 
       <div class="row">
-        <div class="col-md-6" v-for="line in lines">
+        <div class="col-md-6" v-for="(line, index) in lines">
           <div class="panel panel-default">
             <div class="panel-body">
               <div class="row">
@@ -34,6 +34,8 @@
                 </div>
                 
               </div>
+              
+              <button class="btn btn-danger" @click="removeLine(index)">Supprimer</button>
             </div>
           </div>
         </div>
@@ -60,6 +62,9 @@ export default {
           { name: '', terminus: true },
         ],
       });
+    },
+    removeLine(index) {
+      this.lines.splice(index, 1);
     },
   },
 };
