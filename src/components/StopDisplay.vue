@@ -21,7 +21,7 @@
 <script>
 export default {
   name: 'StopResult',
-  props: ['stop'],
+  props: ['stop', 'lines'],
 };
 </script>
 
@@ -48,8 +48,10 @@ header > div {
 .onDemand {
   position: absolute;
   bottom: 0;
+  left: 0;
   
-  margin: 1%;
+  margin: 1% 2.8%;
+  padding: .2%;
   
   font-size: 3vw;
 }

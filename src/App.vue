@@ -2,8 +2,8 @@
   <div id="app">
     <page-header></page-header>
     <stop-settings :stop.sync="stop"></stop-settings>
-    <lines-settings></lines-settings>
-    <stop-display :stop="stop"></stop-display>
+    <lines-settings :lines.sync="lines"></lines-settings>
+    <stop-display :stop="stop" :lines="lines"></stop-display>
   </div>
 </template>
 
@@ -17,9 +17,10 @@ export default {
   data() {
     return {
       stop: {
-        name: 'Bel-Air',
+        name: 'Bachet-de-Pesay',
         onDemand: false,
       },
+      lines: [],
     };
   },
   name: 'app',
