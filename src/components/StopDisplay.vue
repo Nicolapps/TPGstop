@@ -8,6 +8,7 @@
               <div class="company"></div>
               <h2>{{ stop.name }}</h2>
             </div>
+            <span class="onDemand" v-if="stop.onDemand">Arrêt sur demande</span>
           </header>
           <ul class="lines">
           </ul>
@@ -42,6 +43,15 @@ header > div {
   left: 0;
   right: 0;
   background: #fff;
+}
+
+.onDemand {
+  position: absolute;
+  bottom: 0;
+  
+  margin: 1%;
+  
+  font-size: 3vw;
 }
 
 .company {
