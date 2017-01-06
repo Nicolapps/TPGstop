@@ -10,7 +10,14 @@
             </div>
             <span class="onDemand" v-if="stop.onDemand">Arrêt sur demande</span>
           </header>
+        </div>
+        <div class="col-xs-8 col-xs-offset-2">
           <ul class="lines">
+            <li v-for="line in lines">
+              <div class="pictogram">
+                <line-pictogram :line="line.name"></line-pictogram>
+              </div>
+            </li>
           </ul>
         </div>
       </div>
@@ -19,13 +26,20 @@
 </template>
 
 <script>
+import LinePictogram from './LinePictogram';
+
 export default {
   name: 'StopResult',
   props: ['stop', 'lines'],
+  components: { LinePictogram },
 };
 </script>
 
 <style scoped>
+.col-xs-8 {
+  padding: 0;
+}
+
 section {
   background: linear-gradient(to bottom, #9be2fe 0%, #67d1fb 100%);
 
@@ -49,10 +63,10 @@ header > div {
   position: absolute;
   bottom: 0;
   left: 0;
-  
+
   margin: 1% 2.8%;
   padding: .2%;
-  
+
   font-size: 3vw;
 }
 
@@ -71,5 +85,21 @@ h2 {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+}
+
+.lines {
+  list-style-type: none;
+  padding-left: 0;
+  padding-top: 3%;
+}
+
+.lines li {
+  display: flex;
+  background: #fff;
+  padding: 3%;
+}
+
+.pictogram {
+  font-size: 4.5em;
 }
 </style>
