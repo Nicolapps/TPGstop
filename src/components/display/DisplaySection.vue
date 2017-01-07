@@ -3,6 +3,7 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-xs-8 col-xs-offset-2">
+
           <header>
             <div>
               <div class="company"></div>
@@ -11,13 +12,10 @@
             <span class="onDemand" v-if="stop.onDemand">Arrêt sur demande</span>
           </header>
         </div>
+
         <div class="col-xs-8 col-xs-offset-2">
           <ul class="lines">
-            <li v-for="line in lines">
-              <div class="pictogram">
-                <line-pictogram :line="line.name"></line-pictogram>
-              </div>
-            </li>
+            <line-display v-for="line in lines" :line="line" />
           </ul>
         </div>
       </div>
@@ -26,12 +24,12 @@
 </template>
 
 <script>
-import LinePictogram from './LinePictogram';
+import LineDisplay from './LineDisplay';
 
 export default {
-  name: 'StopResult',
+  name: 'DisplaySection',
   props: ['stop', 'lines'],
-  components: { LinePictogram },
+  components: { LineDisplay },
 };
 </script>
 
@@ -90,16 +88,6 @@ h2 {
 .lines {
   list-style-type: none;
   padding-left: 0;
-  padding-top: 3%;
-}
-
-.lines li {
-  display: flex;
-  background: #fff;
-  padding: 3%;
-}
-
-.pictogram {
-  font-size: 4.5em;
+  padding-top: 2%;
 }
 </style>

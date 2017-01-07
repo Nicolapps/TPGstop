@@ -3,7 +3,7 @@
     <page-header></page-header>
     <stop-settings :stop.sync="stop"></stop-settings>
     <lines-settings :lines.sync="lines"></lines-settings>
-    <stop-display :stop="stop" :lines="lines"></stop-display>
+    <display-section :stop="stop" :lines="lines"></stop-display>
   </div>
 </template>
 
@@ -11,7 +11,7 @@
 import PageHeader from 'components/PageHeader';
 import LinesSettings from 'components/LinesSettings';
 import StopSettings from 'components/StopSettings';
-import StopDisplay from 'components/StopDisplay';
+import DisplaySection from 'components/display/DisplaySection';
 
 export default {
   data() {
@@ -20,11 +20,21 @@ export default {
         name: 'Bachet-de-Pesay',
         onDemand: false,
       },
-      lines: [],
+      lines: [
+        {
+          name: '12',
+          destinations: [
+            { name: 'Plainpalais', terminus: false },
+            { name: 'Bel-Air', terminus: false },
+            { name: 'Rive', terminus: false },
+            { name: 'Moillesulaz', terminus: true },
+          ],
+        },
+      ],
     };
   },
   name: 'app',
-  components: { PageHeader, LinesSettings, StopSettings, StopDisplay },
+  components: { PageHeader, LinesSettings, StopSettings, DisplaySection },
 };
 </script>
 

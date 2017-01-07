@@ -1,12 +1,4 @@
-
-<template>
-  <span class="LinePictogram" :style="style">
-    {{ line }}
-  </span>
-</template>
-
-<script>
-const lines = {
+export default {
   1: {
     back: '#5a1e82',
     text: '#ffffff',
@@ -292,41 +284,3 @@ const lines = {
     text: '#000000',
   },
 };
-
-export default {
-  name: 'LinePictogram',
-  props: ['line'],
-
-  computed: {
-    style() {
-      if (!(this.line in lines)) { // Ligne inconnue
-        return {
-          border: '1px solid black',
-          color: 'black',
-        };
-      }
-
-      return {
-        color: lines[this.line].text,
-        'background-color': lines[this.line].back,
-      };
-    },
-  },
-};
-</script>
-
-<style scoped>
-.LinePictogram {
-  display: block;
-  height: 1.4em;
-  width: 2em;
-
-  border-radius: 9999px;
-
-  font-family: 'Helvetica Neue', 'Helvetica', 'Roboto', sans-serif;
-  font-weight: bold;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-</style>
