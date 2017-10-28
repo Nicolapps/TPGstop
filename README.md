@@ -1,6 +1,6 @@
 # TPGstop
 
-> Générateur de faux panneaux TPG
+Générateur de faux panneaux TPG
 
 ## Build Setup
 
