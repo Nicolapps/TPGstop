@@ -275,6 +275,10 @@ export default {
     back: '#003399',
     text: '#ffffff',
   },
+  XA: {
+    back: '#969391',
+    text: '#ffffff',
+  },
   Y: {
     back: '#ff9999',
     text: '#000000',

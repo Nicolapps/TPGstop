@@ -3,7 +3,7 @@
     <page-header></page-header>
     <stop-settings :stop.sync="stop"></stop-settings>
     <lines-settings :lines.sync="lines"></lines-settings>
-    <display-section :stop="stop" :lines="lines"></stop-display>
+    <display-section :stop="stop" :lines="lines"></display-section>
   </div>
 </template>
 
